@@ -1,17 +1,19 @@
-#!/bin/sh
+#!/bin/bash
 
+at=("$@")
+count=0
 echo "\$@"
-count=1
-for i in "$@"
+while [ "$count" -lt "$#" ]
 do
-    echo "$count:$i"
+    echo "$count:${at[$count]}"
     count=$((count + 1))
 done
 
-count=1
+star=("$*")
+count=0
 echo "\$*"
-for i in "$*"
+while [ "$count" -lt "$#" ]
 do
-    echo "$count:$i"
+    echo "$count:${star[$count]}"
     count=$((count + 1))
 done
